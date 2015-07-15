@@ -1,0 +1,217 @@
+let SessionLoad = 1
+if &cp | set nocp | endif
+let s:cpo_save=&cpo
+set cpo&vim
+imap <S-Tab> <Plug>SuperTabBackward
+inoremap <C-Tab> 	
+imap <silent> <expr> <F4> (pumvisible() ? "\<Plug>LookupFileCE" : "")."\\<Plug>LookupFile"
+inoremap <Plug>LookupFileCE 
+inoremap <silent> <SNR>10_AutoPairsReturn =AutoPairsReturn()
+map  :NERDTreeToggle 			" 打开或者关闭目录树窗口
+nnoremap <silent>  :CtrlP
+nmap <silent> ,lg :scs find g =expand("<cword>")
+nmap <silent> ,cs :scs find  =expand("<cword>")<C-Left><C-Left>
+nmap ,cw :cw 10
+nmap ,co :copen
+nmap ,cl :cclose
+nmap ,cp :cp
+nmap ,cn :cn
+nmap <silent> ,lo :SessionOpen
+nmap <silent> ,ll :SessionList
+nmap <silent> ,ls :SessionSave
+nmap <silent> ,lw :LUWalk"
+nmap <silent> ,lb :LUBufs
+nmap <silent> ,lk :LUTags
+nmap ,to :tabo
+nmap ,tc :tabc
+nmap ,tn :tabnew
+map <silent> ,eu :e ~/.vim/bundle/usrmapkey/plugin/usrmap.vim
+map <silent> ,ee :e ~/.vimrc
+map <silent> ,ss :source ~/.vimrc
+nmap gx <Plug>NetrwBrowseX
+nmap wl :TlistToggle
+nmap wm :WMToggle 				
+nnoremap <silent> <Plug>NetrwBrowseX :call netrw#NetrwBrowseX(expand("<cWORD>"),0)
+nnoremap <silent> <F6> :Rfgrep
+nnoremap <silent> <F3> :GrepBuffer
+nmap <silent> <F4> <Plug>LookupFile
+imap 	 <Plug>SuperTabForward
+inoremap <expr>  omni#cpp#maycomplete#Complete()
+inoremap <expr> . omni#cpp#maycomplete#Dot()
+inoremap <expr> : omni#cpp#maycomplete#Scope()
+inoremap <expr> > omni#cpp#maycomplete#Arrow()
+let &cpo=s:cpo_save
+unlet s:cpo_save
+set backspace=indent,eol,start
+set completeopt=longest,menu
+set cscopequickfix=s-,c-,d-,i-,t-,e-
+set fileencodings=utf-8,gbk,ucs-bom,cp936
+set guifont=PowerlineSymbols\ for\ Powerline
+set helplang=cn
+set ignorecase
+set nomodeline
+set omnifunc=omni#cpp#complete#Main
+set runtimepath=~/.vim,~/.vim/bundle/auto-pairs,~/.vim/bundle/cscope,~/.vim/bundle/ctrlp,~/.vim/bundle/genutils,~/.vim/bundle/grep,~/.vim/bundle/jellybeans,~/.vim/bundle/lookupfile,~/.vim/bundle/luaftplugin,~/.vim/bundle/misc,~/.vim/bundle/nerdtree,~/.vim/bundle/omnicppcomplete,~/.vim/bundle/powerline,~/.vim/bundle/sessionman,~/.vim/bundle/supertab,~/.vim/bundle/taglist,~/.vim/bundle/usrmapkey,~/.vim/bundle/winmanager,/usr/local/share/vim/vimfiles,/usr/local/share/vim/vim72,/usr/local/share/vim/vimfiles/after,~/.vim/bundle/omnicppcomplete/after,~/.vim/after
+set tags=./tags,./TAGS,tags,TAGS,~/.vim/tags/cpp_src/tags
+set wildignore=*/tmp/*,*.so,*.swp,*.zip,*.exe
+let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
+let v:this_session=expand("<sfile>:p")
+silent only
+cd /home/jxsj2/trunk/sourcecode
+if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
+  let s:wipebuf = bufnr('%')
+endif
+set shortmess=aoO
+badd +226 gameworld/core_old/kluaplayer.cpp
+badd +45 base/include/engine/kjxscript.h
+badd +138 gameworld/core_old/knpcai.h
+badd +504 gameworld/core_old/kplayer.h
+badd +89 gameworld/core_old/tasksystem/ktaskmanager.h
+badd +75 gameworld/core_old/kitemlist.h
+badd +1 ~/.vimrc
+silent! argdel *
+edit gameworld/core_old/kplayer.h
+set splitbelow splitright
+set nosplitbelow
+set nosplitright
+wincmd t
+set winheight=1 winwidth=1
+argglobal
+let s:cpo_save=&cpo
+set cpo&vim
+inoremap <buffer> <silent> <BS> =AutoPairsDelete()
+map <buffer> ,  :w:make
+inoremap <buffer> <silent> å =AutoPairsFastWrap()
+inoremap <buffer> <silent> â =AutoPairsBackInsert()
+inoremap <buffer> <silent> <expr> ð AutoPairsToggle()
+inoremap <buffer> <silent> î :call AutoPairsJump()a
+inoremap <buffer> <silent>  =AutoPairsDelete()
+inoremap <buffer> <silent>   =AutoPairsSpace()
+inoremap <buffer> <silent> " =AutoPairsInsert('"')
+inoremap <buffer> <silent> ' =AutoPairsInsert('''')
+inoremap <buffer> <silent> ( =AutoPairsInsert('(')
+inoremap <buffer> <silent> ) =AutoPairsInsert(')')
+noremap <buffer> <silent> ð :call AutoPairsToggle()
+noremap <buffer> <silent> î :call AutoPairsJump()
+inoremap <buffer> <silent> [ =AutoPairsInsert('[')
+inoremap <buffer> <silent> ] =AutoPairsInsert(']')
+inoremap <buffer> <silent> ` =AutoPairsInsert('`')
+inoremap <buffer> <silent> { =AutoPairsInsert('{')
+inoremap <buffer> <silent> } =AutoPairsInsert('}')
+let &cpo=s:cpo_save
+unlet s:cpo_save
+setlocal keymap=
+setlocal noarabic
+setlocal noautoindent
+setlocal balloonexpr=
+setlocal nobinary
+setlocal bufhidden=
+setlocal buflisted
+setlocal buftype=
+setlocal cindent
+setlocal cinkeys=0{,0},0),:,0#,!^F,o,O,e
+setlocal cinoptions=
+setlocal cinwords=if,else,while,do,for,switch
+setlocal comments=sO:*\ -,mO:*\ \ ,exO:*/,s1:/*,mb:*,ex:*/,://
+setlocal commentstring=/*%s*/
+setlocal complete=.,w,b,u,t,i
+setlocal completefunc=
+setlocal nocopyindent
+setlocal nocursorcolumn
+setlocal nocursorline
+setlocal define=
+setlocal dictionary=
+setlocal nodiff
+setlocal equalprg=
+setlocal errorformat=
+setlocal noexpandtab
+if &filetype != 'cpp'
+setlocal filetype=cpp
+endif
+setlocal foldcolumn=0
+setlocal foldenable
+setlocal foldexpr=0
+setlocal foldignore=#
+setlocal foldlevel=0
+setlocal foldmarker={{{,}}}
+setlocal foldmethod=manual
+setlocal foldminlines=1
+setlocal foldnestmax=20
+setlocal foldtext=foldtext()
+setlocal formatexpr=
+setlocal formatoptions=croql
+setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
+setlocal grepprg=
+setlocal iminsert=2
+setlocal imsearch=2
+setlocal include=
+setlocal includeexpr=
+setlocal indentexpr=
+setlocal indentkeys=0{,0},:,0#,!^F,o,O,e
+setlocal noinfercase
+setlocal iskeyword=@,48-57,_,192-255
+setlocal keywordprg=
+setlocal nolinebreak
+setlocal nolisp
+setlocal nolist
+setlocal makeprg=
+setlocal matchpairs=(:),{:},[:]
+setlocal nomodeline
+setlocal modifiable
+setlocal nrformats=octal,hex
+set number
+setlocal number
+setlocal numberwidth=4
+setlocal omnifunc=omni#cpp#complete#Main
+setlocal path=
+setlocal nopreserveindent
+setlocal nopreviewwindow
+setlocal quoteescape=\\
+setlocal noreadonly
+setlocal norightleft
+setlocal rightleftcmd=search
+setlocal noscrollbind
+setlocal shiftwidth=8
+setlocal noshortname
+setlocal nosmartindent
+setlocal softtabstop=0
+setlocal nospell
+setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
+setlocal spellfile=
+setlocal spelllang=en
+setlocal statusline=%!Pl#Statusline(0,1)
+setlocal suffixesadd=
+setlocal swapfile
+setlocal synmaxcol=3000
+if &syntax != 'cpp'
+setlocal syntax=cpp
+endif
+setlocal tabstop=8
+setlocal tags=
+setlocal textwidth=0
+setlocal thesaurus=
+setlocal nowinfixheight
+setlocal nowinfixwidth
+setlocal wrap
+setlocal wrapmargin=0
+silent! normal! zE
+let s:l = 504 - ((13 * winheight(0) + 18) / 37)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+504
+normal! 01l
+tabnext 1
+if exists('s:wipebuf')
+  silent exe 'bwipe ' . s:wipebuf
+endif
+unlet! s:wipebuf
+set winheight=1 winwidth=20 shortmess=filnxtToO
+let s:sx = expand("<sfile>:p:r")."x.vim"
+if file_readable(s:sx)
+  exe "source " . s:sx
+endif
+let &so = s:so_save | let &siso = s:siso_save
+doautoall SessionLoadPost
+unlet SessionLoad
+" vim: set ft=vim :
