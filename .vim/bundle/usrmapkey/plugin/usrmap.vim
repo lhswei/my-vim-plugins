@@ -21,7 +21,7 @@ nmap <silent> <leader>lk :LUTags<cr>
 "映射LUBufs为,ll
 nmap <silent> <leader>lb :LUBufs<cr>
 "映射LUWalk为,lw
-nmap <silent> <leader>lw :LUWalk<cr>"
+nmap <silent> <leader>lw :LUWalk<cr>
 
 nmap <silent> <leader>ls :SessionSave<cr>
 nmap <silent> <leader>ll :SessionList<cr>
@@ -32,6 +32,8 @@ nmap <leader>cp :cp<cr>
 nmap <leader>cl :cclose<cr>
 nmap <leader>co :copen<cr>
 nmap <leader>cw :cw 10<cr>
+nmap <silent> <leader>pe :call LAddElemTage()<cr>
+nmap <silent> <leader>pf :call LAddFileHead()<cr>
 nmap <silent> <leader>cs :scs find  <C-R>=expand("<cword>")<CR><C-Left><C-Left>
 autocmd FileType c,cpp  map <buffer> <leader><space> :w<cr>:make<cr>
 nmap <silent> <leader>db :source ~/.vim/bundle/vimgdb/macros/gdb_mappings.vim<cr>

@@ -10,6 +10,7 @@ set autoindent
 "set nopaste
 set nu
 set nocompatible
+set clipboard=unnamed
 set backspace=indent,eol,start
 "set termencoding=gbk
 "set encoding=utf-8
@@ -45,7 +46,7 @@ set guifont=PowerlineSymbols\ for\ Powerline
 set nocompatible
 set t_Co=256
 let g:Powerline_symbols = 'fancy'
-
+set laststatus=2                    "一个文件也要有状态栏
 let Grep_Default_Filelist = '*.c *.cpp *.hpp *.cc *.h *.ini *.txt *.xml *.lua *.proto *.vim'
 set tags+=~/.vim/tags/cpp_src/tags
 
