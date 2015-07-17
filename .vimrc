@@ -6,19 +6,24 @@ set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 set autoindent
+"set paste
+"set nopaste
 set nu
 set nocompatible
 set backspace=indent,eol,start
-set fileencodings=utf-8,gbk,ucs-bom,cp936
+"set termencoding=gbk
+"set encoding=utf-8
+set fileencodings=gbk,ucs-bom,utf-8,cp936,latin1
+let g:fencview_autodetect = 1
 :colorscheme jellybeans
 "augroup filetype
 "	au! BufRead,BufNewFile *.proto setfiletype proto
 "augroup end
 "let g:miniBufExplMaxSize = 2
-let Tlist_Show_One_File=1    " åªå±•ç¤ºä¸€ä¸ªæ–‡ä»¶çš„taglist
-let Tlist_Exit_OnlyWindow=1  " å½“taglistæ˜¯æœ€åä»¥ä¸ªçª—å£æ—¶è‡ªåŠ¨é€€å‡º
-let Tlist_Use_Right_Window=1 " åœ¨å³è¾¹æ˜¾ç¤ºtaglistçª—å£
-let Tlist_Sort_Type="name"   " tagæŒ‰åå­—æ’åº
+let Tlist_Show_One_File=1    " Ö»Õ¹Ê¾Ò»¸öÎÄ¼şµÄtaglist
+let Tlist_Exit_OnlyWindow=1  " µ±taglistÊÇ×îºóÒÔ¸ö´°¿ÚÊ±×Ô¶¯ÍË³ö
+let Tlist_Use_Right_Window=1 " ÔÚÓÒ±ßÏÔÊ¾taglist´°¿Ú
+let Tlist_Sort_Type="name"   " tag°´Ãû×ÖÅÅĞò
 "let g:winManagerWindowLayout='NERDTree|TagList,MiniBufExplorer'  
 let g:winManagerWindowLayout='NERDTree|TagList'  
 let g:NERDTree_title="[NERDTree]"  
@@ -31,8 +36,8 @@ function! NERDTree_IsValid()
 endfunction
 set completeopt=longest,menu
 let OmniCpp_NamespaceSearch = 2     " search namespaces in the current buffer   and in included files
-let OmniCpp_ShowPrototypeInAbbr = 1 " æ˜¾ç¤ºå‡½æ•°å‚æ•°åˆ—è¡¨
-let OmniCpp_MayCompleteScope = 1    " è¾“å…¥ :: åè‡ªåŠ¨è¡¥å…¨
+let OmniCpp_ShowPrototypeInAbbr = 1 " ÏÔÊ¾º¯Êı²ÎÊıÁĞ±í
+let OmniCpp_MayCompleteScope = 1    " ÊäÈë :: ºó×Ô¶¯²¹È«
 let OmniCpp_DefaultNamespaces = ["std", "_GLIBCXX_STD"]
 
 "powerline
@@ -47,12 +52,12 @@ set tags+=~/.vim/tags/cpp_src/tags
 """"""""""""""""""""""""""""""
 " lookupfile setting
 " """"""""""""""""""""""""""""""
-let g:LookupFile_MinPatLength = 2               "æœ€å°‘è¾“å…¥2ä¸ªå­—ç¬¦æ‰å¼€å§‹æŸ¥æ‰¾
-let g:LookupFile_PreserveLastPattern = 0        "ä¸ä¿å­˜ä¸Šæ¬¡æŸ¥æ‰¾çš„å­—ç¬¦ä¸²
-let g:LookupFile_PreservePatternHistory = 1     "ä¿å­˜æŸ¥æ‰¾å†å²
-let g:LookupFile_AlwaysAcceptFirst = 1          "å›è½¦æ‰“å¼€ç¬¬ä¸€ä¸ªåŒ¹é…é¡¹ç›®
-let g:LookupFile_AllowNewFiles = 0              "ä¸å…è®¸åˆ›å»ºä¸å­˜åœ¨çš„æ–‡ä»¶
-if filereadable("./filenametags")                "è®¾ç½®tagæ–‡ä»¶çš„åå­—
+let g:LookupFile_MinPatLength = 2               "×îÉÙÊäÈë2¸ö×Ö·û²Å¿ªÊ¼²éÕÒ
+let g:LookupFile_PreserveLastPattern = 0        "²»±£´æÉÏ´Î²éÕÒµÄ×Ö·û´®
+let g:LookupFile_PreservePatternHistory = 1     "±£´æ²éÕÒÀúÊ·
+let g:LookupFile_AlwaysAcceptFirst = 1          "»Ø³µ´ò¿ªµÚÒ»¸öÆ¥ÅäÏîÄ¿
+let g:LookupFile_AllowNewFiles = 0              "²»ÔÊĞí´´½¨²»´æÔÚµÄÎÄ¼ş
+if filereadable("./filenametags")                "ÉèÖÃtagÎÄ¼şµÄÃû×Ö
 let g:LookupFile_TagExpr = '"./filenametags"'
 endif
 """""""""""""""""""""""""""""""""""""""
@@ -63,7 +68,7 @@ let g:lua_check_syntax = 1
 let g:lua_check_globals = 0 
 
 autocmd! bufwritepost .vimrc source ~/.vimrc
-"/æœç´¢å¤§å°å†™ä¸æ•æ„Ÿ
+"/ËÑË÷´óĞ¡Ğ´²»Ãô¸Ğ
 set ignorecase
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
