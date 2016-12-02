@@ -1,0 +1,16 @@
+.bash_history
+.bash_logout
+.bash_profile
+.bashrc
+.cache/
+.cshrc
+.gitconfig
+.lftp/
+.ssh/
+.subversion/
+.tcshrc
+.vim/.netrwhist
+.viminfo
+anaconda-ks.cfg
+install.log
+install.log.syslog

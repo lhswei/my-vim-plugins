@@ -14,7 +14,7 @@ set clipboard=unnamed
 set backspace=indent,eol,start
 "set termencoding=gbk
 "set encoding=utf-8
-set fileencodings=gbk,ucs-bom,utf-8,cp936,latin1
+set fileencodings=gbk,bucs-bom,utf-8,utf-16,ig5,gb18030,latin1
 let g:fencview_autodetect = 1
 :colorscheme jellybeans
 "augroup filetype
